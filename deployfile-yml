@@ -1,0 +1,10 @@
+---
+- hosts: webservers
+  sudo: yes
+  tasks:
+    - name: before deployment folder structure
+      shell: cd /root/deploy && ls -la
+    - name: Copy the playbook
+      copy: src=/root/ansible/installapache.yml dest=/root/deploy
+    - name: after the depliyment
+      shell: cd /root/deploy && ls -la
