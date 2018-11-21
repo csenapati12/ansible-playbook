@@ -11,7 +11,13 @@ you can skip some tags as below and rest of the task will be executed except the
 ansible-playbook example.yml --skip-tags "tag1"
 
 Special tag(always)
+
+always
+
 There is a special always tag that will always run a task
+
+never
+Another special tag is never, which will prevent a task from running unless a tag is specifically requested.
 
 
 ex:
