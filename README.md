@@ -29,3 +29,4 @@ ex:
         msg: "Always runs"
       tags:
         - always
+testing log
