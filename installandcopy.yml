@@ -1,0 +1,10 @@
+---
+- hosts: droplets
+  sudo : yes
+  tasks:
+     - name: install open jdk
+       command: apt-get install openjdk-8-jre -y
+     - name: Copying file from server to client
+       copy:
+         src: /root/ansible-play/java-tomcat-maven-example.war
+         dest: /home/meaurovind/deploy
