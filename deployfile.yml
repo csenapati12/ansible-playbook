@@ -2,8 +2,8 @@
 - hosts: localhost
   tasks:
     - name: before deployment folder structure
-      shell: cd /root/deploy && ls -la
+      shell: cd /var/lib/jenkins/deploy && ls -la
     - name: Copy the playbook
-      copy: src=/var/lib/jenkins/workspace/ansible-deploy/install-apache.yml dest=/root/deploy
+      copy: src=/var/lib/jenkins/workspace/ansible-deploy/install-apache.yml dest=/var/lib/jenkins/deploy
     - name: after the depliyment
-      shell: cd /root/deploy && ls -la
+      shell: cd /var/lib/jenkins/deploy && ls -la
