@@ -1,5 +1,5 @@
 pipeline {
-    agent none   
+    agent any   
     stages {
         stage('Ansible Integration') {
            	
@@ -9,7 +9,7 @@ pipeline {
 				ansible --version
 				ansible-playbook deployfile.yml
                 """
-              
+	       }
             }
         }
     }  
