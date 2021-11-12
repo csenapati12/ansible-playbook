@@ -1,0 +1,28 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Stop an application pool
+      win_iis_webapppool:
+          name: AppPool
+          state: stopped
+    - name: Backup Web Config
+      win_copy:
+           src: D:\WSGC\UIScom\web.config
+           dest: D:\Temp\UIScom\web.config
+    - name: Clean Home Directory
+      win_file:
+           path: D:\WSGC\UIScom
+           state: absent
+    - name: Deploy new Build
+      win_copy:
+           src: D:\WSGC\UIScom
+           dest: D:\WSGC\UIScom
+    - name: Restore Web config
+      win_copy:
+           src: D:\Temp\UIScom\web.config
+           dest: D:\WSGC\UIScom\web.config
+    - name: Start an application pool
+      win_iis_webapppool:
+          name: AppPool
+          state: started
+
